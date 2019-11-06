@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,15 +17,62 @@ namespace Clases_Abstractas
         #endregion
 
         #region Propiedades
-        public string Apellido { get; set; }
+        public string Apellido
+        {
+            get
+            {
+              return this.apellido;
+            }
+            set
+            {
+              this.apellido = value;
+            }
+        }
 
-        public string Nombre { get; set; }
+        public string Nombre
+        {
+            get
+            {
+              return this.nombre;
+            }
+            set
+            {
+              this.nombre = value;
+            }
+        }
 
-        public ENacionalidad Nacionalidad { get; set; }
+        public ENacionalidad Nacionalidad
+        {
+            get
+            {
+              return this.nacionalidad;
+            }
+            set
+            {
+              this.nacionalidad = value;
+            }
+        }
 
-        public int DNI { get; set; }
-        public string StringToDNI { set; }
-        #endregion
+        public int DNI
+        {
+            get
+            {
+              return this.dni;
+            }
+            set
+            {
+              this.dni = value;
+            }
+        }
+
+        public string StringToDNI
+        {
+            get
+            {
+              return this.dni.ToString();
+            }
+        }
+    #endregion
 
         #region Constructores
         public Persona()
@@ -52,7 +99,7 @@ namespace Clases_Abstractas
         #region Metodos
         public override string ToString()
         {
-            return $"asd";
+            return $"NOMBRE COMPLETO: {this.apellido}, {this.nombre}\n NACIONALIDAD: {this.nacionalidad}";
         }
 
         private int ValidarDni(ENacionalidad nacionalidad, int dato)
