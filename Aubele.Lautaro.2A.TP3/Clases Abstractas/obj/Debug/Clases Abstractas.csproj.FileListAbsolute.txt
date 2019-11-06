@@ -1,0 +1,2 @@
+C:\Users\lauch\Desktop\Aubele.Lautaro.2A.TP3\Clases Abstractas\obj\Debug\Clases Abstractas.csprojAssemblyReference.cache
+C:\Users\lauch\Desktop\Aubele.Lautaro.2A.TP3\Clases Abstractas\obj\Debug\Clases Abstractas.csproj.CoreCompileInputs.cache
