@@ -3,28 +3,60 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Excepciones;
 
 namespace Clases_Instanciables
 {
     public class Jornada
     {
         #region Atributos
-
+        
         private List<Alumno> alumnos;
-        private EClases clase;
+        private Universidad.EClases clase;
         private Profesor instructor;
         #endregion
 
         #region Propiedades
-        public List<Alumno> Alumnos { get; set; }
+        public List<Alumno> Alumnos
+        {
+            get
+            {
+                return this.alumnos;
+            }
 
-        public EClases Clase { get; set; }
+            set
+            {
+                this.alumnos = value;
+            }
+        }
 
-        public Profesor Instructor { get; set; }
+        public Universidad.EClases Clase
+        {
+            get
+            {
+                return this.clase;
+            }
 
+            set
+            {
+                this.clase = value;
+            }
+        }
+        public Profesor Instructor
+        {
+            get
+            {
+                return this.instructor;
+            }
+
+            set
+            {
+                this.instructor = value;
+            }
+        }
         #endregion
 
-        public bool Guardar(Jornada jornada)
+        public static bool Guardar(Jornada jornada)
         {
             return false;
         }
@@ -32,28 +64,46 @@ namespace Clases_Instanciables
         #region Constructor
         private Jornada()
         {
-
+            this.alumnos = new List<Alumno>();
         }
-        public Jornada(EClases clase, Profesor instructor)
+        public Jornada(Universidad.EClases clase, Profesor instructor):this()
         {
-
+            this.clase = clase;
+            this.instructor = instructor;
         }
         #endregion
 
-        public string Leer()
+        public static string Leer()
         {
-            return "as";
+            return Jornada.;
         }
 
         #region Sobrecargas
         public override string ToString()
         {
-            return base.ToString(); 
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine($"JORNADA: \nCLASE DE {this.clase} POR {this.instructor}");
+            foreach (Alumno alumno in this.alumnos)
+            {
+                sb.AppendLine(alumno.ToString());
+            }
+            return sb.ToString();
         }
 
         public static bool operator ==(Jornada j, Alumno a)
         {
-            return false;
+            bool retorno = false;
+
+            foreach (Alumno alumno in j.alumnos)
+            {
+                if (alumno == a)
+                {
+                    retorno = true;
+                }
+            }
+            
+
+            return retorno;
         }
 
         public static bool operator !=(Jornada j, Alumno a)
@@ -63,6 +113,10 @@ namespace Clases_Instanciables
 
         public static Jornada operator +(Jornada j, Alumno a)
         {
+            if(j!=a)
+            {
+                j.alumnos.Add(a);
+            }
             return j;
         }
         #endregion

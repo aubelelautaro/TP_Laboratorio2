@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Clases_Abstractas;
+using EntidadesAbstractas;
 
 namespace Clases_Instanciables
 {
-    sealed class Alumno : Universitario
+    public sealed class Alumno : Universitario
     {
-        private EClases claseQueToma;
+        private Universidad.EClases claseQueToma;
         private EEstadoCuenta estadoCuenta;
 
         #region Constructores
@@ -19,44 +19,59 @@ namespace Clases_Instanciables
 
         }
 
-        public Alumno(int id, string nombre, string apellido, string dni, ENacionalidad nacionalidad, EClases claseQueToma)
+        public Alumno(int id, string nombre, string apellido, string dni, ENacionalidad nacionalidad, Universidad.EClases claseQueToma)
         {
-
+            this.DNI = id;
+            this.Nombre = nombre;
+            this.Nacionalidad = nacionalidad;
+            this.claseQueToma = claseQueToma;
         }
 
-        public Alumno(int id, string nombre, string apellido, string dni, ENacionalidad nacionalidad, EClases claseQueToma, EEstadoCuenta estadoCuenta)
+        public Alumno(int id, string nombre, string apellido, string dni, ENacionalidad nacionalidad, Universidad.EClases claseQueToma, EEstadoCuenta estadoCuenta):this(id,nombre,apellido,dni,nacionalidad,claseQueToma)
         {
-
+            this.estadoCuenta = estadoCuenta;
         }
         #endregion
 
-        protected string MostrarDatos()
+        protected override string MostrarDatos()
         {
-            return "x";
+            return base.ToString() + $"\nESTADO DE CUENTA: {this.estadoCuenta}\n" + this.ParticiparEnClase();
         }
 
-        protected string ParticiparEnClase()
+        protected override string ParticiparEnClase()
         {
-            return "x";
+            return $"TOMA CLASES DE {this.claseQueToma}";
         }
 
         #region Sobrecargas
 
-        public static bool operator ==(Alumno a, EClases clase)
+        public static bool operator ==(Alumno a, Universidad.EClases clase)
         {
+            bool retorno = false;
+            if(a.claseQueToma == clase && a.estadoCuenta != EEstadoCuenta.Deudor)
+            {
+                retorno = true;
+            }
 
+            return retorno;
         }
 
-        public static bool operator !=(Alumno a, EClases clase)
+        public static bool operator !=(Alumno a, Universidad.EClases clase)
         {
-            return !(a == clase);
+            bool retorno = false;
+            if(a.claseQueToma != clase)
+            {
+                retorno = true;
+            }
+            return retorno;
         }
 
         public override string ToString()
         {
-            return base.ToString();
+            return this.MostrarDatos();
         }
         #endregion
+
         #region Enumerados
         public enum EEstadoCuenta
         {
