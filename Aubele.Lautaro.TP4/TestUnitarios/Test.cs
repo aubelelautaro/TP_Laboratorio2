@@ -21,7 +21,7 @@ namespace TestUnitarios
         }
 
         /// <summary>
-        /// 
+        /// Verifica que no haya dos id iguales
         /// </summary>
         [TestMethod]
         public void TestMismoID()
