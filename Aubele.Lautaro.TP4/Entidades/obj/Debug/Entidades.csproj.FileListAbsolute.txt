@@ -1,0 +1,6 @@
+C:\Users\lauch\Desktop\Aubele.Lautaro.TP4\Entidades\bin\Debug\Entidades.dll.config
+C:\Users\lauch\Desktop\Aubele.Lautaro.TP4\Entidades\bin\Debug\Entidades.dll
+C:\Users\lauch\Desktop\Aubele.Lautaro.TP4\Entidades\bin\Debug\Entidades.pdb
+C:\Users\lauch\Desktop\Aubele.Lautaro.TP4\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
+C:\Users\lauch\Desktop\Aubele.Lautaro.TP4\Entidades\obj\Debug\Entidades.dll
+C:\Users\lauch\Desktop\Aubele.Lautaro.TP4\Entidades\obj\Debug\Entidades.pdb

@@ -1,0 +1,14 @@
+C:\Users\lauch\Desktop\Aubele.Lautaro.TP4\MainCorreo\bin\Debug\MainCorreo.exe.config
+C:\Users\lauch\Desktop\Aubele.Lautaro.TP4\MainCorreo\bin\Debug\MainCorreo.exe
+C:\Users\lauch\Desktop\Aubele.Lautaro.TP4\MainCorreo\bin\Debug\MainCorreo.pdb
+C:\Users\lauch\Desktop\Aubele.Lautaro.TP4\MainCorreo\obj\Debug\MainCorreo.csprojAssemblyReference.cache
+C:\Users\lauch\Desktop\Aubele.Lautaro.TP4\MainCorreo\obj\Debug\MainCorreo.FrmPpal.resources
+C:\Users\lauch\Desktop\Aubele.Lautaro.TP4\MainCorreo\obj\Debug\MainCorreo.Properties.Resources.resources
+C:\Users\lauch\Desktop\Aubele.Lautaro.TP4\MainCorreo\obj\Debug\MainCorreo.csproj.GenerateResource.cache
+C:\Users\lauch\Desktop\Aubele.Lautaro.TP4\MainCorreo\obj\Debug\MainCorreo.csproj.CoreCompileInputs.cache
+C:\Users\lauch\Desktop\Aubele.Lautaro.TP4\MainCorreo\obj\Debug\MainCorreo.exe
+C:\Users\lauch\Desktop\Aubele.Lautaro.TP4\MainCorreo\obj\Debug\MainCorreo.pdb
+C:\Users\lauch\Desktop\Aubele.Lautaro.TP4\MainCorreo\bin\Debug\Entidades.dll
+C:\Users\lauch\Desktop\Aubele.Lautaro.TP4\MainCorreo\bin\Debug\Entidades.pdb
+C:\Users\lauch\Desktop\Aubele.Lautaro.TP4\MainCorreo\bin\Debug\Entidades.dll.config
+C:\Users\lauch\Desktop\Aubele.Lautaro.TP4\MainCorreo\obj\Debug\MainCorreo.csproj.CopyComplete
