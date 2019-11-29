@@ -10,9 +10,9 @@ namespace EntidadesAbstractas
     
     public abstract class Persona
     {
-        #region Campos
-        private string apellido;
-        private string nombre;
+        #region Atributos
+        private string apellido = "";
+        private string nombre = "";
         private ENacionalidad nacionalidad;
         private int dni;
         #endregion
@@ -100,12 +100,25 @@ namespace EntidadesAbstractas
         }
         #endregion
 
-        #region Metodos
+
+        #region Sobrecarga
+
         public override string ToString()
         {
-            return $"NOMBRE COMPLETO: {this.apellido}, {this.nombre}\n NACIONALIDAD: {this.nacionalidad}\n";
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine($"NOMBRE COMPLETO: { this.apellido}, {this.nombre}");
+            sb.AppendLine($"NACIONALIDAD: {this.nacionalidad}");
+            return sb.ToString();
         }
+        #endregion
+        #region Metodos
 
+        /// <summary>
+        /// Valida que el dni de un argentino o extranjero esten dentro de los parametros dados
+        /// </summary>
+        /// <param name="nacionalidad"></param>
+        /// <param name="dato"></param>
+        /// <returns>El dato validado o una excepcion</returns>
         private int ValidarDni(ENacionalidad nacionalidad, int dato)
         {
             if(this.nacionalidad == ENacionalidad.Argentino && (dato >=1 || dato <=89999999))
@@ -121,10 +134,16 @@ namespace EntidadesAbstractas
             }
             else
             {
-                throw new NacionalidadInvalidaException();
+                throw new NacionalidadInvalidaException("La nacionalidad no se concide con el número de DNI");
             }
         }
 
+        /// <summary>
+        /// Parsea el dato pasado a int y se valida
+        /// </summary>
+        /// <param name="nacionalidad"></param>
+        /// <param name="dato"></param>
+        /// <returns></returns>
         private int ValidarDni(ENacionalidad nacionalidad, string dato)
         {
             int dni = 0;
@@ -141,6 +160,12 @@ namespace EntidadesAbstractas
             return ValidarDni(nacionalidad, dni);
         }
 
+
+        /// <summary>
+        /// Valida el nombre o el apellido
+        /// </summary>
+        /// <param name="dato"></param>
+        /// <returns>el string validado</returns>
         private string ValidarNombreApellido(string dato)
         {
             foreach (char letra in dato)

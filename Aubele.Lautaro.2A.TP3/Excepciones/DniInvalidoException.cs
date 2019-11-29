@@ -8,24 +8,24 @@ namespace Excepciones
 {
     public class DniInvalidoException : Exception
     {
-        private string mensajeBase;
+        private static string mensajeBase = "Error en el dni";
 
-        public DniInvalidoException()
+        public DniInvalidoException() : base(DniInvalidoException.mensajeBase)
         {
 
         }
 
-        public DniInvalidoException(Exception e)
+        public DniInvalidoException(Exception e) : this(e.Message)
         {
 
         }
 
-        public DniInvalidoException(string message)
+        public DniInvalidoException(string message) : base(message)
         {
 
         }
 
-        public DniInvalidoException(string message, Exception e)
+        public DniInvalidoException(string message, Exception e) : base(message,e)
         {
 
         }

@@ -4,3 +4,6 @@ C:\Users\lauch\Desktop\Aubele.Lautaro.2A.TP3\Archivos\obj\Debug\Archivos.csprojA
 C:\Users\lauch\Desktop\Aubele.Lautaro.2A.TP3\Archivos\obj\Debug\Archivos.csproj.CoreCompileInputs.cache
 C:\Users\lauch\Desktop\Aubele.Lautaro.2A.TP3\Archivos\obj\Debug\Archivos.dll
 C:\Users\lauch\Desktop\Aubele.Lautaro.2A.TP3\Archivos\obj\Debug\Archivos.pdb
+C:\Users\lauch\Desktop\Aubele.Lautaro.2A.TP3\Archivos\bin\Debug\Excepciones.dll
+C:\Users\lauch\Desktop\Aubele.Lautaro.2A.TP3\Archivos\bin\Debug\Excepciones.pdb
+C:\Users\lauch\Desktop\Aubele.Lautaro.2A.TP3\Archivos\obj\Debug\Archivos.csproj.CopyComplete

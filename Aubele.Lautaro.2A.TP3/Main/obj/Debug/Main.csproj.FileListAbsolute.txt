@@ -5,3 +5,12 @@ C:\Users\lauch\Desktop\Aubele.Lautaro.2A.TP3\Main\obj\Debug\Main.csprojAssemblyR
 C:\Users\lauch\Desktop\Aubele.Lautaro.2A.TP3\Main\obj\Debug\Main.csproj.CoreCompileInputs.cache
 C:\Users\lauch\Desktop\Aubele.Lautaro.2A.TP3\Main\obj\Debug\Main.exe
 C:\Users\lauch\Desktop\Aubele.Lautaro.2A.TP3\Main\obj\Debug\Main.pdb
+C:\Users\lauch\Desktop\Aubele.Lautaro.2A.TP3\Main\bin\Debug\Archivos.dll
+C:\Users\lauch\Desktop\Aubele.Lautaro.2A.TP3\Main\bin\Debug\Clases Abstractas.dll
+C:\Users\lauch\Desktop\Aubele.Lautaro.2A.TP3\Main\bin\Debug\Clases Instanciables.dll
+C:\Users\lauch\Desktop\Aubele.Lautaro.2A.TP3\Main\bin\Debug\Excepciones.dll
+C:\Users\lauch\Desktop\Aubele.Lautaro.2A.TP3\Main\bin\Debug\Archivos.pdb
+C:\Users\lauch\Desktop\Aubele.Lautaro.2A.TP3\Main\bin\Debug\Clases Abstractas.pdb
+C:\Users\lauch\Desktop\Aubele.Lautaro.2A.TP3\Main\bin\Debug\Clases Instanciables.pdb
+C:\Users\lauch\Desktop\Aubele.Lautaro.2A.TP3\Main\bin\Debug\Excepciones.pdb
+C:\Users\lauch\Desktop\Aubele.Lautaro.2A.TP3\Main\obj\Debug\Main.csproj.CopyComplete

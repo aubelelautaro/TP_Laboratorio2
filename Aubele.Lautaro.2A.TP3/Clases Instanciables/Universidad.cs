@@ -10,9 +10,12 @@ namespace Clases_Instanciables
 {
     public class Universidad
     {
+        #region Atributos
         private List<Alumno> alumnos;
         private List<Jornada> jornada;
         private List<Profesor> profesores;
+        #endregion
+
 
         #region Propiedades
         public List<Alumno> Alumnos
@@ -80,29 +83,62 @@ namespace Clases_Instanciables
         }
         #endregion
 
-        public bool Guardar(Universidad uni)
+        #region Metodos
+        /// <summary>
+        /// Guarda en xml una Universidad
+        /// </summary>
+        /// <param name="jornada"></param>
+        /// <returns>True si pudo guardarse la universidad o false en caso contrario</returns>
+        public static bool Guardar(Universidad uni)
         {
-            return false;
+            Xml<Universidad> xml = new Xml<Universidad>();
+
+            return xml.Guardar("Universidad.xml",uni);
         }
 
+        /// <summary>
+        /// Lee en xml una universidad
+        /// </summary>
+        /// <returns>La universidad si pudo leer</returns>
         public static Universidad Leer()
         {
+            Xml<Universidad> lectura = new Xml<Universidad>();
 
-            return ;
+            Universidad universidad = new Universidad();
+
+            lectura.Leer("Universidad.xml", out universidad);
+
+            return universidad;
         }
 
+        /// <summary>
+        /// Muestra los datos completos de la jornada
+        /// </summary>
+        /// <param name="uni"></param>
+        /// <returns>Las jornadas de la universidad en string</returns>
         private static string MostrarDatos(Universidad uni)
         {
             StringBuilder sb = new StringBuilder();
-            foreach (Jornada jornada in uni.jornada)
+            sb.AppendLine("JORNADA: ");
+
+            foreach (Jornada j in uni.jornada)
             {
-                sb.AppendLine(jornada.ToString());
+                sb.AppendLine(j.ToString());
             }
             return sb.ToString();
         }
-        #region Sobrecargas
-        
 
+        #endregion
+
+
+        #region Sobrecargas
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="g"></param>
+        /// <param name="a"></param>
+        /// <returns></returns>
         public static bool operator ==(Universidad g, Alumno a)
         {
             bool retorno = false;
@@ -119,16 +155,7 @@ namespace Clases_Instanciables
 
         public static bool operator ==(Universidad g, Profesor i)
         {
-            bool retorno = false;
-
-            foreach (Profesor profesor in g.profesores)
-            {
-                if (i == profesor)
-                {
-                    retorno = true;
-                }
-            }
-            return retorno;
+            return g.profesores.Contains(i);
         }
 
         public static Profesor operator ==(Universidad u, EClases clase)
@@ -157,22 +184,56 @@ namespace Clases_Instanciables
 
         public static Profesor operator !=(Universidad u, EClases clase)
         {
-            return !(g == u);
+
+            foreach (Profesor profesor in u.profesores)
+            {
+                if (profesor  != clase)
+               {
+                    return profesor;
+                }
+             }
+
+            return null;
         }
 
         public static Universidad operator +(Universidad g, EClases clase)
         {
+            Jornada auxJornada = new Jornada(clase, g == clase);
+            foreach (Alumno alumno in g.alumnos)
+            {
+                if(alumno == clase)
+                {
+                    auxJornada.Alumnos.Add(alumno);
+                }
 
+            }
+
+            g.jornada.Add(auxJornada);
+
+            return g;
         }
 
         public static Universidad operator +(Universidad u, Alumno a)
         {
-            
+            if(u != a)
+            {
+                u.alumnos.Add(a);
+            }else{
+                throw new AlumnoRepetidoException();
+
+            }
+            return u;
         }
 
         public static Universidad operator +(Universidad u, Profesor i)
         {
 
+            if(u!=i)
+            {
+                u.profesores.Add(i);
+            }
+
+            return u;
         }
         public override string ToString()
         {

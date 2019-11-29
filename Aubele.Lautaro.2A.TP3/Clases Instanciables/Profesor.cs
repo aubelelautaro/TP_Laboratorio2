@@ -9,9 +9,10 @@ namespace Clases_Instanciables
 {
     public sealed class Profesor : Universitario
     {
+        #region Atributos
         private Queue<Universidad.EClases> clasesDelDia;
         private static Random random;
-
+        #endregion
 
         #region Constructores
 
@@ -26,11 +27,30 @@ namespace Clases_Instanciables
 
         public Profesor(int id,string nombre,string apellido, string dni, Persona.ENacionalidad nacionalidad):base(id,nombre,apellido,dni,nacionalidad)
         {
-            this._randomClases();
             this.clasesDelDia = new Queue<Universidad.EClases>();
+            this._randomClases();
         }
         #endregion
 
+        #region Metodo
+
+        /// <summary>
+        /// Devuelve 2 clases random al profesor
+        /// </summary>
+        private void _randomClases()
+        {
+            this.clasesDelDia.Enqueue((Universidad.EClases)Profesor.random.Next(0, 4));
+            this.clasesDelDia.Enqueue((Universidad.EClases)Profesor.random.Next(0, 4));
+        }
+
+        #endregion
+
+        #region Sobrecargas
+
+        /// <summary>
+        /// Sobrecarga de participar en clase
+        /// </summary>
+        /// <returns>Las clases del dia en string</returns>
         protected override string ParticiparEnClase()
         {
             StringBuilder sb = new StringBuilder();
@@ -43,20 +63,24 @@ namespace Clases_Instanciables
             }
 
             return sb.ToString();
-        } 
-
-        private void _randomClases()
-        {
-            this.clasesDelDia.Enqueue((Universidad.EClases)Profesor.random.Next(0, 4));
-            this.clasesDelDia.Enqueue((Universidad.EClases)Profesor.random.Next(0, 4));
         }
+
+        /// <summary>
+        /// Sobrecarga de los datos en string
+        /// </summary>
+        /// <returns>Datos del universitario con las clases</returns>
         protected override string MostrarDatos()
         {
             return base.MostrarDatos() + this.ParticiparEnClase();
         }
 
-        #region Sobrecargas
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="i"></param>
+        /// <param name="clase"></param>
+        /// <returns>true si la clase del dia del profesor es igual a la clase pasada por parametro</returns>
         public static bool operator ==(Profesor i, Universidad.EClases clase)
         {
             bool retorno = false;
